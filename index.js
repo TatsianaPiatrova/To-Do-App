@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 //POST METHOD
 app.post('/', async (req, res) => {
     const todoTask = new TodoTask({
-        content: req.body.content
+        content: req.body.content,
     });
     try {
         await todoTask.save();
@@ -47,8 +47,8 @@ app
     })
     .post((req, res) => {
         const id = req.params.id;
-        TodoTask.findByIdAndUpdate(id, { content: req.body.content }, err => {
-            if (err) return res.send(500, err);
+        TodoTask.findByIdAndUpdate(id, { content: req.body.content[1] }, err => {
+            if (err) return res.status(500).send(err);
             res.redirect("/");
         });
     });
