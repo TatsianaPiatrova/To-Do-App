@@ -50,5 +50,8 @@ input:checked+span {
     text-decoration: line-through;
 }
 .btn-outline-primary{
-    margin-right: 20px;
+    margin-right: 10px;
+}
+.todo-item{
+    cursor: move;
 }

@@ -1,47 +1,3 @@
-<!-- <!DOCTYPE html>
-
-<head>
-    <title>Todo App</title>
-    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="todo-container">
-        <h2>To-Do List</h2>
-        <div class="todo">
-            <form action="" method="POST" class="todo-header">
-                <input type="text" name="content">
-                <button type="submit"><span class="fas fa-plus"></span></button>
-            </form>
-            <ul class="todo-list">
-                <% todoTasks.forEach(details=> { %>
-                    <% if (details._id==idTask) { %>
-                        <li class="todo-list-item">
-                            <form action="/edit/<%= details._id %>" method="POST">
-                                <input type="text" value="<%= details.content %>" name="content">
-                                <button type="submit">Confirm</button>
-                                <a href="/" class="cancel">Cancel</a>
-                            </form>
-                        </li>
-                        <% } else { %>
-                            <li class="todo-list-item">
-                                <div class="todo-list-item-name">
-                                    <%= details.content %>
-                                </div>
-                                <a href="/edit/<%= details._id %>" class="edit"> <span class="fas fa-edit"></span>
-                                </a>
-                                <a href="/remove/<%= details._id %>" class="remove"> <span class="fas fa-times"></span>
-                                </a>
-                            </li>
-                            <% } %>
-                                <% }) %>
-            </ul>
-        </div>
-    </div>
-</body> -->
 <!DOCTYPE html>
 
 <head>
@@ -105,6 +61,7 @@
                                 <div class="col px-1 m-1 d-flex
                                     align-items-center">
                                     <div class="d-flex align-items-center">
+                                        <input type="checkbox" class="option-input radio">
                                         <input class="form-control
                                             form-control-lg border-0
                                             edit-todo-input bg-transparent
@@ -120,30 +77,14 @@
                                 <a href="/" class="cancel fas fa-times"></a>
                             </div>
                         </form>
-                        <div class="p-2 mx-4 border-black-25
-                            border-bottom"></div>
+
                         <% } else { %>
 
                             <div class="row px-3 align-items-center todo-item
                                 rounded">
-                                <div class="col-auto m-1 p-0 d-flex
-                                    align-items-center">
-                                    <h2 class="m-0 p-0">
-                                        <i class="fa fa-square-o text-primary
-                                            btn m-0 p-0 d-none"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom" title="Mark
-                                            as complete"></i>
-                                        <i class="fa fa-check-square-o
-                                            text-primary btn m-0 p-0"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Mark
-                                            as todo"></i>
-                                    </h2>
-                                </div>
                                 <div class="col px-1 m-1 d-flex
                                     align-items-center">
+                                    <input type="checkbox" class="option-input radio">
                                     <label type="text" class="form-control
                                         form-control-lg border-0 edit-todo-input
                                         bg-transparent rounded px-3" readonly>
@@ -176,8 +117,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="p-2 mx-4 border-black-25
-                                        border-bottom"></div>
                                     <% } %>
                                         <% }) %>
                                         </div>
